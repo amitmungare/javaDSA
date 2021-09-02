@@ -126,7 +126,7 @@ public class BST {
 		}
 		if(root2.right != null) {
 			System.out.print("R"+root2.right.data);
-		}
+		}  
 		System.out.println();
 		
 		printHelper(root2.left);
