@@ -24,7 +24,7 @@ public class IsBalanced {
 	
 	
 	public static TreeNode<Integer> inputLW(){
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in); 
 		QueueLL<TreeNode<Integer>> pendingNode = new QueueLL<>();
 		
 		int rootdata = sc.nextInt();
