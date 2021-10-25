@@ -1,5 +1,7 @@
 package graphs;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Graphs {
@@ -19,6 +21,24 @@ public class Graphs {
 			}
 		}
 	}
+	
+	public static void bfs(int mat[][]) {
+		Queue<Integer> pv = new LinkedList<Integer>();
+		boolean v[] = new boolean[mat.length];
+		v[0]=true;
+		pv.add(0);
+		
+		while(!pv.isEmpty()) {
+			int currvertex = pv.poll();
+			System.out.print(currvertex+" ");
+			for(int i=0; i<mat.length; i++) {
+				if(mat[currvertex][i] ==1 && ! v[i]) {
+					pv.add(i);
+					v[i]=true;
+				}
+			}
+		}
+	}
 
 	public static void main(String[] args) {
 
@@ -33,7 +53,8 @@ public class Graphs {
 			mat[v1][v2]=1;
 			mat[v2][v1]=1;
 		}
-		dfs(mat);
+//		dfs(mat);
+		bfs(mat);
 	}
 
 }
